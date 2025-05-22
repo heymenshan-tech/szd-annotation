@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <style>
+      body {
+        font-family: "微软雅黑", "Microsoft YaHei", Arial, sans-serif;
+        padding: 20px;
+        width: 300px;
+        margin: 0;
+      }
+      
+      .status-bar {
+        background-color: #f8f9fa;
+        border: 1px solid #dee2e6;
+        border-radius: 5px;
+        padding: 10px;
+        text-align: center;
+        margin-bottom: 15px;
+        font-weight: bold;
+        display: none;
+      }
+      
+      .status-bar.active {
+        background-color: #d4edda;
+        border-color: #c3e6cb;
+        color: #155724;
+        display: block;
+      }
+
+      #toggleStart {
+        width: 100%;
+        height: 45px;
+        border: none;
+        border-radius: 8px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        margin-bottom: 20px;
+        transition: all 0.3s ease;
+      }
+
+      #toggleStart.active {
+        background-color: #28a745;
+        color: white;
+      }
+
+      #toggleStart.inactive {
+        background-color: #28a745;
+        color: white;
+      }
+
+      .info-section {
+        background-color: #f8f9fa;
+        padding: 15px;
+        border-radius: 8px;
+        margin-bottom: 20px;
+        font-size: 14px;
+        line-height: 1.6;
+      }
+
+      .backup-section {
+        border-top: 1px solid #dee2e6;
+        padding-top: 20px;
+      }
+
+      .backup-buttons {
+        display: flex;
+        gap: 10px;
+        margin-top: 15px;
+      }
+
+      .backup-btn {
+        flex: 1;
+        height: 40px;
+        border: none;
+        border-radius: 6px;
+        font-size: 14px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      #saveBtn {
+        background-color: #007bff;
+        color: white;
+      }
+
+      #saveBtn:hover {
+        background-color: #0056b3;
+      }
+
+      #loadBtn {
+        background-color: #6c757d;
+        color: white;
+      }
+
+      #loadBtn:hover {
+        background-color: #545b62;
+      }
+
+      h4 {
+        margin: 0 0 10px 0;
+        color: #495057;
+      }
+
+      .highlight-text {
+        color: #007bff;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="statusBar" class="status-bar">
+      ✅ 使用中
+    </div>
+
+    <button id="toggleStart" class="inactive">
+      开始使用
+    </button>
+
+    <div class="info-section">
+      <p><strong>💾 数据保存说明：</strong></p>
+      <p>您的高亮和评论会自动保存在浏览器的本地存储中。</p>
+      <p><strong>⚠️ 注意：</strong>清除浏览器数据或重装浏览器时，保存的内容会被删除。</p>
+      <p><strong>💡 建议：</strong>定期使用下方的<span class="highlight-text">备份功能</span>保存您的数据！</p>
+    </div>
+
+    <div class="backup-section">
+      <h4>📂 数据备份与恢复</h4>
+      <p>将您的高亮数据备份到指定文件夹，或从备份文件恢复数据。</p>
+      <div class="backup-buttons">
+        <button id="saveBtn" class="backup-btn">备份数据</button>
+        <button id="loadBtn" class="backup-btn">恢复数据</button>
+      </div>
+    </div>
+
+    <script src="popup.js"></script>
+  </body>
+</html>
